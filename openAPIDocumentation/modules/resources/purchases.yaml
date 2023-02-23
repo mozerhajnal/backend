@@ -1,0 +1,23 @@
+get:
+  summary: Find user's purchases
+  tags: [Purchases]
+  parameters:
+    - in: path
+      name: userId
+      schema:
+        type: string
+      required: true
+      description: ID of the user
+  security:
+    - bearerAuth: []
+  responses:
+    200:
+      description: User's purchases
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Purchases.yaml'
+    400:
+      $ref: '../responses/ValidationError.yaml'
+    500:
+      $ref: '../responses/ServerError.yaml' 

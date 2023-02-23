@@ -1,0 +1,52 @@
+type: object
+required:
+  - id
+  - name
+  - sku
+  - price
+  - quantity
+  - description
+  - type
+  - productImage
+properties:
+  id:
+    type: string
+    description: The auto-generated id of the product
+  name:
+    type: string
+    description: Product name
+  sku:
+    type: string
+    description: Product unique identifier
+  price:
+    type: integer
+    description: Product price
+  quantity:
+    type: integer
+    description: Product stock quantity 
+  description:
+    type: string
+    description: Product details 
+  type:
+    type: string
+    enum: ['ring', 'necklace', 'ringbox']
+    description: Product category
+  productImage:
+    type: array
+    description: Product images
+
+example:
+  products:
+    -
+      id : 1,
+      name : Wood resin necklace,
+      sku : 1245.45
+      price: 36,
+      quantity: 24,
+      description: Handmade wood resin necklace,
+      type : necklace
+      productImage: ["https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929073.jpg",
+                    "https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929105.jpg",
+                    "https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929225.jpg"]
+    
+   

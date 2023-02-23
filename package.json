@@ -1,0 +1,62 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "test": "jest --watchAll",
+    "test:ci": "jest --ci --collectCoverage --reporters=default",
+    "test:cover": "jest --collectCoverage",
+    "start": "nodemon -r dotenv/config --exec ./node_modules/.bin/babel-node src/index.js",
+    "build": "babel src -d dist",
+    "build-doc": "swagger-cli bundle openAPIDocumentation/modules/root.yaml --outfile openAPIDocumentation/openapi.yaml --type yaml",
+    "serve": "node -r dotenv/config dist/index.js",
+    "loadData":"node -r esm -r dotenv/config ./src/data/dataLoader.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apidevtools/swagger-cli": "^4.0.4",
+    "aws-sdk": "^2.1157.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.3",
+    "http-errors": "^2.0.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb-memory-server": "^8.6.0",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "standard-http-error": "^2.0.1",
+    "swagger-ui-express": "^4.3.0",
+    "winston": "^3.7.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "@shelf/jest-mongodb": "^2.2.1",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-restricted-globals": "^0.2.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.2",
+    "supertest": "^6.2.2"
+  }
+}

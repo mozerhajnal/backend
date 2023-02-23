@@ -1,0 +1,42 @@
+patch:
+  summary: Update a user
+  tags: [Users]
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Users.yaml'
+  responses:
+    200:
+      description: The user was successfully updated
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The auto-generated id of the user
+              email:
+                type: string
+                description: The user email
+              name:
+                type: string
+                description: The user name
+              token:
+                type: string
+                description: The authorization JWT token 
+            example:
+              id: 1
+              email: johndoe@test.com
+              name: John Doe
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+    400:
+      $ref: '../responses/ValidationError.yaml'
+    401:
+      $ref: '../responses/Unauthorized.yaml'
+    500:
+      $ref: '../responses/ServerError.yaml' 

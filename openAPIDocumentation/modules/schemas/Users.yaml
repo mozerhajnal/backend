@@ -1,0 +1,17 @@
+type: object
+properties:
+  email:
+    type: string
+    description: The user email
+  name:
+    type: string
+    description: The user name
+  password:
+    type: string
+    description: The user password
+    minLength: 8
+minProperties: 1
+example:
+  name: John Doe
+  email: johndoe@test.com
+  password: password123

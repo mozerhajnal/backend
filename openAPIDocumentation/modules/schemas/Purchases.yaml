@@ -1,0 +1,39 @@
+type: object
+required:
+  - id
+  - userId
+  - status
+  - paidDate
+  - paidAmount
+  - productId
+properties:
+  id:
+    type: string
+    description: The auto-generated id of the product
+  userId:
+    type: string
+    description: The auto-generated id of the user
+  status:
+    type: string
+    description: Purchase status
+  paidDate:
+    type: string
+    format: date
+    description: Payment date
+  paidAmount:
+    type: integer
+    description: Total payment 
+  productId:
+    type: string
+    description: The auto-generated id of the product 
+example:
+  purchases:
+      id : 1,
+      userId : 2,
+      status : paid,
+      paidDate : 2022.05.06,
+      paidAmount : 12000,
+      productId : 2
+      
+    
+   

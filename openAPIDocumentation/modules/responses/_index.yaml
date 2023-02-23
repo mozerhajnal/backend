@@ -1,0 +1,8 @@
+500:
+  $ref: "./ServerError.yaml"
+401:
+  $ref: "./Unauthorized.yaml"
+400:
+  $ref: "./ValidationError.yaml"
+409:
+  $ref: "./ConflictError.yaml"

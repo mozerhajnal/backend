@@ -1,0 +1,48 @@
+post:
+  summary: Login a user
+  tags: [Login]
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Login.yaml'
+  responses:
+    200:
+      description: The user was successfully logged in
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                description: The user email
+              password:
+                type: string
+                description: The user password
+            example:
+              staus: ok
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+    400:
+      description: Validation error
+        <br>
+        <h4>The error messages are the following:</h4>
+        <ul>
+        <li>All fields are required.</li>
+        <li>Email is required.</li>
+        <li>Password is required.</li>
+        <li>Email or password is incorrect.</li>
+        </ul>
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Validation error description
+            example:
+              message: Validation error message
+    500:
+      description: Some server error

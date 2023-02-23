@@ -1,0 +1,56 @@
+type: object
+required:
+  - id
+  - userId
+  - status
+  - orderDate
+  - name
+  - price
+  - quantity
+  - productImage
+  - productId
+properties:
+  id:
+    type: string
+    description: The auto-generated id of the order
+  userId:
+    type: string
+    description: The auto-generated id of the user
+  status:
+    type: string
+    description: The order status
+  orderDate:
+    type: string
+    format: date
+    description: The order date
+  name:
+    type: string
+    description: The ordered item name
+  price:
+    type: integer
+    description: The ordered item price
+  quantity:
+    type: integer
+    description: The ordered item quantity
+  productImage:
+    type: array
+    description: The ordered item images
+  productId:
+    type: string
+    description: The auto-generated id of the choosen product
+example:
+  orders:
+    -
+        id: 1
+        userId: 2
+        status: pending
+        orderDate: 2021.03.30
+        name: Wood resin necklace
+        price: 390
+        quantity: 1
+        productImage: ["https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929073.jpg",
+                    "https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929105.jpg",
+                    "https://trinwoodart.s3.amazonaws.com/uploadImages-1654502929225.jpg"]
+        productId: 2
+        
+    

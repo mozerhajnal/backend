@@ -1,0 +1,11 @@
+description: Unauthorized error
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Validation error description
+          example: 'Invalid token'
+      

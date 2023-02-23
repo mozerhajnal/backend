@@ -1,0 +1,10 @@
+node_modules/
+output/
+logs/
+.env
+yarn-error.log
+dist
+coverage
+openAPIDocumentation/openapi.yaml
+.env.docker
+globalConfig.json

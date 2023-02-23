@@ -1,0 +1,58 @@
+post:
+  summary: Register a new user
+  tags: [Register]
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas/Register.yaml'
+  responses:
+    200:
+      description: The user was successfully registered
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The auto-generated id of the user
+              email:
+                type: string
+                description: The user email
+              name:
+                type: string
+                description: The user name
+              password:
+                type: string
+                description: The user password
+            example:
+              id: 1
+              name: John Doe
+              email: johndoe@test.com
+              isAdmin: false
+              isVerified: false
+    400:
+      description: Validation error
+        <br>
+        <h4>The error messages are the following:</h4>
+        <ul>
+        <li>Name is required.</li>
+        <li>Email is required.</li>
+        <li>Password is required.</li>
+        <li>Password must be at least 8 characters.</li>
+        <li>Email is already taken. <small>(for testing - email@taken.com)</small></li>
+        </ul>
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Validation error description
+            example:
+              message: 'Validation error message'
+    500:
+      description: Some server error

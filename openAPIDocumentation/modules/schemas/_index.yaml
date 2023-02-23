@@ -1,0 +1,14 @@
+Register:
+  $ref: "./Register.yaml"
+Login:
+  $ref: "./Login.yaml"
+Users:
+  $ref: "./Users.yaml"
+NewsLetter:
+  $ref: "./NewsLetter.yaml"
+Products:
+  $ref: "./Products.yaml"
+Orders:
+  $ref: "./Orders.yaml"
+Purchases:
+  $ref: "./Purchases.yaml"
