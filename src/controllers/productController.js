@@ -4,9 +4,11 @@ export const productController = {
 
   async getProducts(req, res, next) {
     try {
+      console.log(req);
       const { statusCode, responseObj } = await productService.getProducts();
       res.status(statusCode).json(responseObj);
     } catch (err) {
+      console.log(err);
       next(err);
     }
   },

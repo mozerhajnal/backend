@@ -6,6 +6,7 @@ export const productService = {
   async getProducts() {
     try {
       const products = await Product.find();
+      console.log(products)
       return {
         statusCode: 200,
         responseObj: { products },
