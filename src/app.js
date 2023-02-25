@@ -1,11 +1,14 @@
 import express from 'express';
 import morgan from 'morgan';
+import cors from 'cors'
 
 import { api, documentation  } from './routes';
 import logger from './logger';
 import errorHandler from './middlewares/error-handler';
 
 const app = express();
+
+app.use(cors())
 
 app.use(morgan('combined', { stream: logger.stream }));
 

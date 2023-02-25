@@ -15,7 +15,7 @@
     "build": "babel src -d dist",
     "build-doc": "swagger-cli bundle openAPIDocumentation/modules/root.yaml --outfile openAPIDocumentation/openapi.yaml --type yaml",
     "serve": "node -r dotenv/config dist/index.js",
-    "loadData":"node -r esm -r dotenv/config ./src/data/dataLoader.js"
+    "loadData": "node -r esm -r dotenv/config ./src/data/dataLoader.js"
   },
   "keywords": [],
   "author": "",
